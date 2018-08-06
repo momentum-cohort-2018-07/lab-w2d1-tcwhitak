@@ -92,10 +92,10 @@ function multigreeting (name, lang){
     if(lang === "es"){
         return "¡Hola, " + name + "!"
     }
-    if (lang === "fr"){
+    if(lang === "fr"){
         return "Bonjour, " + name +"!"
     }
-    if (lang === "eo"){
+    if(lang === "eo"){
         return "Saluton, " + name +"!"
     }
 }
@@ -107,5 +107,9 @@ function multigreeting (name, lang){
 // If the birth date is after than the current date, return nothing.
 
 function howOld(birthDate, anotherDate) {
-    return Math.floor((anotherDate.getTime() - birthDate.getTime())/31557600000)
+    if(anotherDate.getTime() < birthDate.getTime()){
+        return
+    } else{
+        return Math.floor((anotherDate.getTime() - birthDate.getTime())/31557600000)
+    }
 }
